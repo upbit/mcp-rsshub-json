@@ -70,12 +70,46 @@ result = await rsshub_get_feed("bilibili/user/video/123456")
   - beautifulsoup4
   - pytz
 
-## 安装
+## 安装方法
+
+### 方法一：使用 pip
 
 1. 克隆仓库
 2. 安装依赖：
 ```bash
 pip install -r requirements.txt
+```
+
+### 方法二：使用 uv（推荐）
+
+uv 是一个极快的 Python 包管理器，安装过程如下：
+
+1. 安装 uv（如果尚未安装）：
+```bash
+pip install uv
+```
+
+2. 创建并初始化项目（如果是新项目）：
+```bash
+uv init rsshub
+cd rsshub
+```
+
+3. 创建虚拟环境：
+```bash
+uv venv
+```
+
+4. 激活虚拟环境：
+```bash
+.venv\Scripts\activate  # Windows
+# 或
+source .venv/bin/activate  # Linux/macOS
+```
+
+5. 安装依赖：
+```bash
+uv pip install -r requirements.txt
 ```
 
 ## 注意事项
