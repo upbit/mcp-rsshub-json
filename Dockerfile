@@ -7,4 +7,4 @@ WORKDIR /app
 
 RUN uv pip install --system -r /app/requirements.txt
 
-CMD [ "python", "rsshub.py" ]
+CMD [ "python", "rsshub_sse.py" ]

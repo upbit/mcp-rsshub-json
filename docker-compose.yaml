@@ -1,8 +1,8 @@
-name: mcp-rsshub-json
+name: mcp-servers
 
 services:
-  mcp-rsshub-json:
-    container_name: mcp-rsshub-json
+  mcp-rsshub:
+    container_name: mcp-rsshub
     # image: ghcr.io/upbit/mcp-rsshub-json:latest
     build:
       context: .
