@@ -1,0 +1,11 @@
+name: mcp-rsshub-json
+
+services:
+  mcp-rsshub-json:
+    container_name: mcp-rsshub-json
+    # image: ghcr.io/upbit/mcp-rsshub-json:latest
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - 8081:8000

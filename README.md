@@ -112,6 +112,25 @@ source .venv/bin/activate  # Linux/macOS
 uv pip install -r requirements.txt
 ```
 
+## Docker
+
+推荐使用 docker 镜像来启动 mcp server
+
+`docker compose up -d`
+
+启动后配置SSE的服务如下：
+
+```json
+{
+    "mcpServers": {
+        "rsshub": {
+            "url": "http://localhost:8081/sse/",
+            "timeout": 60,
+        },
+    }
+}
+```
+
 ## 注意事项
 
 - 工具会自动尝试多个 RSSHub 实例，直到成功获取数据
