@@ -41,9 +41,10 @@ RSSHUB MCP 是一个用于获取和解析 RSS 源的 Python 工具，它支持�
 
 |环境变量|说明|参考配置|
 |-------|----|-------|
-|PORT|服务的监听端口|默认 `8000`；一般改docker映射端口即可|
+|MCP_MODE|MCP协议模式|默认 `sse`。也可以设置新的 `streamable-http` (需要client支持) |
 |MCP_ENDPOINT|MCP的路径|默认 `rsshub`；对应配置中的 `http://127.0.0.1:8000/rsshub` 最后部分|
 |USER_INSTANCES|覆盖默认的rsshub源|仅在指定自己的源时需要，分号分隔。如 "http://localhost:1234;http://localhost:2234"|
+|PORT|服务的监听端口|默认 `8000`；一般改docker映射端口即可|
 
 #### mcpServers 配置
 

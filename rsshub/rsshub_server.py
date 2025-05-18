@@ -1,10 +1,6 @@
 import os
 from rsshub import *
 
-
-TITLE = "RSSHUB MCP Service"
-VERSION = "1.0.0"
-
 USER_INSTANCES = [
     inst.strip()
     for inst in os.getenv("USER_INSTANCES", "").split(";")
@@ -12,12 +8,12 @@ USER_INSTANCES = [
 ]
 if len(USER_INSTANCES) > 0:
     RSSHUB_INSTANCES = USER_INSTANCES
-print("RSSHUB_INSTANCES> ", json.dumps(RSSHUB_INSTANCES, indent=2))
-
-# MCP endpoint
-http_app = mcp.http_app(path=os.getenv("MCP_ENDPOINT", "/rsshub"))
 
 if __name__ == "__main__":
-    import uvicorn
-
-    uvicorn.run(http_app, host="0.0.0.0", port=int(os.getenv("PORT", 8000)))
+    mode = os.getenv("MCP_MODE", "sse")  # stdio, streamable-http, sse
+    port = int(os.getenv("PORT", 8000))
+    endpoint = os.getenv("MCP_ENDPOINT", "/rsshub")
+    print(
+        f"Start mcp-rsshub(mode={mode}, port={port}, path={endpoint}) instances={json.dumps(RSSHUB_INSTANCES, indent=2)}"
+    )
+    mcp.run(transport=mode, host="0.0.0.0", port=port, path=endpoint)

@@ -5,7 +5,7 @@ import json
 import feedparser
 from bs4 import BeautifulSoup
 from datetime import datetime
-from typing import Any, Dict, List, Optional
+from typing import Any, Dict
 
 from fastmcp import FastMCP
 
@@ -164,3 +164,7 @@ async def get_feed(url: str) -> Dict[str, Any]:
 
     # 如果所有URL都失败，抛出最后一个错误
     raise Exception(f"所有RSSHub实例均无法访问: {str(last_error)}")
+
+
+if __name__ == "__main__":
+    mcp.run(transport="stdio")
