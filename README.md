@@ -56,6 +56,8 @@ RSSHUB MCP 是一个用于获取和解析 RSS 源的 Python 工具，它支持�
         "run",
         "-i",
         "--rm",
+        "-p",
+        "8000:8000",
         "ghcr.io/upbit/mcp-rsshub"
       ]
     }
